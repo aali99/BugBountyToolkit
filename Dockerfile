@@ -104,10 +104,10 @@ RUN mv /root/httpx/cmd/httpx/httpx /usr/local/bin/
 #git clone https://github.com/hahwul/dalfox && cd dalfox && go install && go build
 RUN go get -u github.com/hahwul/dalfox
 RUN cd  /root
-RUN git clone https://github.com/chvancooten/BugBountyScanner
-RUN cd /root/BugBountyScanner
-RUN wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
-RUN rm -rf /root/BugBountyScanner/.env.example
+RUN git clone https://github.com/maurosoria/dirsearch.git
+RUN cd  /root
+RUN git clone https://github.com/aali99/BugBountyScanner
+RUN cd /root/BugBountyScanner && chmod +x rust.sh
 RUN export GO111MODULE=on && \
     go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 RUN cd /opt/
