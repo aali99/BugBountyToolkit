@@ -100,10 +100,8 @@ RUN cd /root
 RUN git clone https://github.com/projectdiscovery/httpx.git
 RUN cd /root/httpx/cmd/httpx&&  go build
 RUN mv /root/httpx/cmd/httpx/httpx /usr/local/bin/
-RUN git clone https://github.com/hahwul/dalfox
-RUN cd dalfox
-RUN go install
-RUN go build
+#git clone https://github.com/hahwul/dalfox && cd dalfox && go install && go build
+RUN go get -u github.com/hahwul/dalfox
 RUN cd  /root
 RUN git clone https://github.com/chvancooten/BugBountyScanner
 RUN cd /root/BugBountyScanner
@@ -121,5 +119,6 @@ RUN cd /opt
 RUN git clone -q https://github.com/1ndianl33t/Gf-Patterns
 RUN mkdir /root/.gf
 RUN cp /opt/Gf-Patterns/*.json /root/.gf 
+RUN cd /root
 RUN wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb && dpkg -i rustscan_2.0.1_amd64.deb
 RUN wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py  && chmod +x dsss.py
