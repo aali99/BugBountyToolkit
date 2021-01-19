@@ -78,46 +78,45 @@ RUN export GO111MODULE=on && \
 
 
 # Gotools
-RUN go get -u github.com/tomnomnom/anew && \
-    go get github.com/jaeles-project/jaeles && \
-    jaeles config init && \
-    go get -u github.com/KathanP19/Gxss && \
-    go get -u github.com/lc/gau && \
-    go get -u github.com/tomnomnom/gf && \
-    go get -u github.com/jaeles-project/gospider && \
-    go get -u github.com/tomnomnom/qsreplace && \
-    cd ~ && git clone https://github.com/aali99/blindxss && cd blindxss&& chmod +x Auto-Scan-Xss.py && mv git .git && python3 Auto-Scan-Xss.py && \
-    go get -u github.com/haccer/subjack && \
-    go get -u github.com/tomnomnom/assetfinder && \
-    go get github.com/hakluke/hakrawler && \
-    go get -u github.com/ffuf/ffuf && \
-    go get -u github.com/ethicalhackingplayground/bxss && \
-    cd ~ && \
-    git clone https://github.com/dwisiswant0/crlfuzz &&  cd crlfuzz/cmd/crlfuzz&&  go build . && mv crlfuzz /usr/local/bin && \
-    cd ~ && \
-    git clone https://github.com/projectdiscovery/httpx.git&&  cd httpx/cmd/httpx&&  go build&&  mv httpx /usr/local/bin/ &&  httpx -version && \
-    cd $GOPATH/src/github.com/OWASP/Amass && \
-    go install ./... && \
-    wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb && \
-    dpkg -i rustscan_2.0.1_amd64.deb && \
-    wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py  && chmod +x dsss.py && \
-    git clone https://github.com/hahwul/dalfox && \
-    cd dalfox && \
-    go install && \
-    go build && \
-    cd  ~/ && \
-    git clone https://github.com/chvancooten/BugBountyScanner && \
-    cd ~/BugBountyScanner && \
-    wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env && \
-    rm -rf .env.example && \
-    git clone -q https://github.com/projectdiscovery/nuclei.git && \
-    cd nuclei/v2/cmd/nuclei/ && \
-    go build && \
-    mv nuclei /usr/local/bin && \
-    cd /opt && \
-    git clone -q https://github.com/projectdiscovery/nuclei-templates.git && \
-    nuclei --update-templates && \
-    cd /opt && \
-    git clone -q https://github.com/1ndianl33t/Gf-Patterns && \
-    mkdir ~/.gf && \
-    cp /opt/Gf-Patterns/*.json ~/.gf 
+RUN go get -u github.com/tomnomnom/anew 
+RUN go get github.com/jaeles-project/jaeles
+RUN go get -u github.com/KathanP19/Gxss
+RUN go get -u github.com/lc/gau
+RUN go get -u github.com/tomnomnom/gf
+RUN go get -u github.com/jaeles-project/gospider
+RUN go get -u github.com/tomnomnom/qsreplace
+RUN cd ~ && git clone https://github.com/aali99/blindxss && cd blindxss&& chmod +x Auto-Scan-Xss.py && mv git .git && python3 Auto-Scan-Xss.py
+RUN go get -u github.com/haccer/subjack
+RUN go get -u github.com/tomnomnom/assetfinder
+RUN go get github.com/hakluke/hakrawler
+RUN go get -u github.com/ffuf/ffuf
+RUN go get -u github.com/ethicalhackingplayground/bxss
+RUN cd ~
+RUN git clone https://github.com/dwisiswant0/crlfuzz &&  cd crlfuzz/cmd/crlfuzz&&  go build . && mv crlfuzz /usr/local/bin
+RUN cd ~
+RUN git clone https://github.com/projectdiscovery/httpx.git&&  cd httpx/cmd/httpx&&  go build&&  mv httpx /usr/local/bin/ &&  httpx -version
+RUN cd $GOPATH/src/github.com/OWASP/Amass
+RUN go install ./...
+RUN wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
+RUN dpkg -i rustscan_2.0.1_amd64.deb
+RUN wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py  && chmod +x dsss.py
+RUN git clone https://github.com/hahwul/dalfox
+RUN cd dalfox
+RUN go install
+RUN go build
+RUN cd  ~/
+RUN git clone https://github.com/chvancooten/BugBountyScanner
+RUN cd ~/BugBountyScanner
+RUN wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
+RUN rm -rf .env.example
+RUN git clone -q https://github.com/projectdiscovery/nuclei.git
+RUN cd nuclei/v2/cmd/nuclei/
+RUN go build
+RUN mv nuclei /usr/local/bin
+RUN cd /opt
+RUN git clone -q https://github.com/projectdiscovery/nuclei-templates.git
+RUN nuclei --update-templates
+RUN cd /opt
+RUN git clone -q https://github.com/1ndianl33t/Gf-Patterns
+RUN mkdir ~/.gf
+RUN cp /opt/Gf-Patterns/*.json ~/.gf 
