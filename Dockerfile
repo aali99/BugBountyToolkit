@@ -62,9 +62,14 @@ RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgra
 
 
 # go
-RUN wget -q -O - https://git.io/vQhTU | bash && \
-    source "~/.bashrc"
-
+RUN cd /opt && \
+    wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz && \
+    tar -xvf go1.15.6.linux-amd64.tar.gz && \
+    rm -rf /opt/go1.15.6.linux-amd64.tar.gz && \
+    mv go /usr/local 
+ENV GOROOT /usr/local/go
+ENV GOPATH /root/go
+ENV PATH ${GOPATH}/bin:${GOROOT}/bin:${PATH}
 
 
 # amass
