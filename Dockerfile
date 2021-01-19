@@ -31,6 +31,7 @@ RUN apt-get update && \
     dnsutils \
     net-tools \
     nano\
+    nmap\
     && rm -rf /var/lib/apt/lists/*
 
 # Install Dependencies
