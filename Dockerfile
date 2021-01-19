@@ -112,8 +112,7 @@ RUN export GO111MODULE=on && \
 RUN cd /opt/
 RUN git clone -q https://github.com/projectdiscovery/nuclei-templates.git
 RUN nuclei --update-templates
-RUN cd /opt
-RUN git clone -q https://github.com/1ndianl33t/Gf-Patterns
+RUN cd /opt && git clone -q https://github.com/1ndianl33t/Gf-Patterns
 RUN mkdir /root/.gf
 RUN cp /opt/Gf-Patterns/*.json /root/.gf 
 RUN cd /root
