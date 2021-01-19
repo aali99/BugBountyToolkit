@@ -107,12 +107,8 @@ RUN git clone https://github.com/chvancooten/BugBountyScanner
 RUN cd /root/BugBountyScanner
 RUN wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
 RUN rm -rf /root/BugBountyScanner/.env.example
-RUN cd /opt
-RUN git clone -q https://github.com/projectdiscovery/nuclei.git
-RUN cd /opt/nuclei/v2/cmd/nuclei/
-RUN go build
-RUN mv /opt/nuclei/v2/cmd/nuclei/nuclei /usr/local/bin
-RUN cd /opt
+RUN go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+RUN cd /opt/
 RUN git clone -q https://github.com/projectdiscovery/nuclei-templates.git
 RUN nuclei --update-templates
 RUN cd /opt
