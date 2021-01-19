@@ -117,5 +117,5 @@ RUN cd /opt && git clone -q https://github.com/1ndianl33t/Gf-Patterns
 RUN mkdir /root/.gf
 RUN cp /opt/Gf-Patterns/*.json /root/.gf 
 RUN cd /root
-RUN wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb && dpkg -i rustscan_2.0.1_amd64.deb
+#RUN wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb && dpkg -i rustscan_2.0.1_amd64.deb
 RUN wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py  && chmod +x dsss.py
