@@ -103,6 +103,8 @@ RUN cd /root/httpx/cmd/httpx&&  go build
 RUN mv /root/httpx/cmd/httpx/httpx /usr/local/bin/
 #git clone https://github.com/hahwul/dalfox && cd dalfox && go install && go build
 RUN go get -u github.com/hahwul/dalfox
+RUN go get -u github.com/shenwei356/rush/
+RUN cd /root && git clone https://github.com/m4ll0k/SecretFinder.git secretfinder && cd secretfinder && python -m pip install -r requirements.txt && chmod +x SecretFinder.py
 RUN cd  /root
 RUN git clone https://github.com/maurosoria/dirsearch.git
 RUN cd  /root
