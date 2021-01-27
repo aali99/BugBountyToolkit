@@ -121,5 +121,6 @@ RUN cp /opt/Gf-Patterns/*.json /root/.gf
 RUN cd /root
 #RUN wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb && dpkg -i rustscan_2.0.1_amd64.deb
 RUN wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py  && chmod +x dsss.py
-RUN cd /root/ && git clone https://github.com/BountyStrike/Injectus && cd /root/Injectus && chmod +x * && pip3 install -r requirements.txt
-RUN pip3 install webscreenshot >/dev/null
+RUN pip3 install webscreenshot
+RUN cd /root && git clone https://github.com/BountyStrike/Injectus && cd /root/Injectus && chmod +x * 
+
