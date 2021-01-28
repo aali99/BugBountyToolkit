@@ -103,7 +103,7 @@ RUN mv /root/httpx/cmd/httpx/httpx /usr/local/bin/
 #git clone https://github.com/hahwul/dalfox && cd dalfox && go install && go build
 RUN go get -u github.com/hahwul/dalfox
 RUN go get -u github.com/shenwei356/rush/
-#RUN cd /root && git clone https://github.com/m4ll0k/SecretFinder.git secretfinder && cd secretfinder && python -m pip install -r requirements.txt && chmod +x SecretFinder.py
+RUN cd /root && git clone https://github.com/m4ll0k/SecretFinder.git && cd SecretFinder && pip3 install -r requirements.txt && chmod +x SecretFinder.py
 RUN cd  /root
 RUN git clone https://github.com/maurosoria/dirsearch.git
 RUN cd  /root
@@ -123,13 +123,3 @@ RUN wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py  && chmo
 RUN pip3 install webscreenshot
 RUN cd /root && git clone https://github.com/BountyStrike/Injectus && cd /root/Injectus && chmod +x * 
 
-# usage:
-# while read url; do docker run -t wfnintr/secretfinder -i $url -o cli | tee -a js_results.txt;done < urls.txt
-from python:alpine
-RUN apk update && \
-        apk add --virtual build-deps \
-        build-base gcc python3-dev && \
-        apk add libxml2-dev libxslt-dev && \
-        wget https://raw.githubusercontent.com/m4ll0k/SecretFinder/master/requirements.txt -qO - | pip3 install -r /dev/stdin && \
-        wget https://raw.githubusercontent.com/m4ll0k/SecretFinder/master/SecretFinder.py -qO /usr/local/bin/SecretFinder.py && \
-        chmod +x /usr/local/bin/SecretFinder.py
