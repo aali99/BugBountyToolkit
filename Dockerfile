@@ -56,8 +56,7 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
 # configure python(s)
-RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3.7 -m pip install --upgrade setuptools && \
-    easy_install -U shodan
+RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools 
 
 
 
@@ -133,4 +132,4 @@ RUN apk update && \
         apk add libxml2-dev libxslt-dev && \
         wget https://raw.githubusercontent.com/m4ll0k/SecretFinder/master/requirements.txt -qO - | pip3 install -r /dev/stdin && \
         wget https://raw.githubusercontent.com/m4ll0k/SecretFinder/master/SecretFinder.py -qO /usr/local/bin/SecretFinder.py && \
-        chmod +x /usr/local/bin/SecretFinder.py && \
+        chmod +x /usr/local/bin/SecretFinder.py
