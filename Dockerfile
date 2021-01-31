@@ -47,7 +47,7 @@ RUN apt-get update && \
     libgmp-dev \
     zlib1g-dev \
     libpcap-dev \
-    python3.7 \
+    python3 \
     fonts-powerline\
     && rm -rf /var/lib/apt/lists/*
 
@@ -56,7 +56,7 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
 # configure python(s)
-RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools 
+RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && easy_install -U shodan
 
 
 
