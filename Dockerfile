@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
 
 LABEL maintainer="Alexis Ahmed"
 
@@ -21,7 +21,6 @@ RUN apt-get update && \
     iputils-ping\
     git \
     wget \
-    tzdata \
     curl \
     make \
     python \
@@ -58,7 +57,7 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
 # configure python(s)
-RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools
+RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && pip3 install --upgrade setuptools
 
 
 
