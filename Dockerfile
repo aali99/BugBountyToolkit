@@ -52,9 +52,6 @@ RUN apt-get update && \
     screen\
     && rm -rf /var/lib/apt/lists/*
 
-# tzdata
-RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
-    dpkg-reconfigure --frontend noninteractive tzdata
 
 # configure python(s)
 RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && pip3 install --upgrade setuptools
