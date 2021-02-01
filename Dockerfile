@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Working Directory
 WORKDIR /root
-RUN mkdir ${HOME}/toolkit && \
+RUN mkdir ${HOME}/toolkit
     
 
 # Install Essentials
