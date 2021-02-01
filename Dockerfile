@@ -24,7 +24,7 @@ RUN apt-get update && \
     curl \
     make \
     python \
-    python-pip \
+    #python-pip \
     python3 \
     python3-pip \
     dnsutils \
@@ -54,7 +54,7 @@ RUN apt-get update && \
 
 
 # configure python(s)
-RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && pip3 install --upgrade setuptools
+RUN python3 -m pip install --upgrade setuptools && pip3 install --upgrade setuptools 
 
 
 
