@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-LABEL maintainer="Alexis Ahmed"
+LABEL maintainer="Alexis Ahmed/sameh"
 
 # Environment Variables
 ENV HOME /root
@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Working Directory
 WORKDIR /root
 RUN mkdir ${HOME}/toolkit && \
-    mkdir ${HOME}/wordlists
+    
 
 # Install Essentials
 RUN apt-get update && \
