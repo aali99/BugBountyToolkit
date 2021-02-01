@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 LABEL maintainer="Alexis Ahmed"
 
@@ -49,6 +49,8 @@ RUN apt-get update && \
     libpcap-dev \
     python3 \
     fonts-powerline\
+    hydra\
+    screen\
     && rm -rf /var/lib/apt/lists/*
 
 # tzdata
