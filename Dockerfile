@@ -120,4 +120,5 @@ RUN cd /root
 RUN wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py  && chmod +x dsss.py
 RUN pip3 install webscreenshot
 RUN cd /root && git clone https://github.com/BountyStrike/Injectus && cd /root/Injectus && chmod +x * 
+RUN cd /root/BugBountyScanner && git clone https://github.com/abdallah-elsharif/cve-2019-3396 && cd cve-2019-3396 && gem install bundler && bundle install && chmod +x cve-2019-3396.rb
 
