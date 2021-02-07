@@ -1,4 +1,4 @@
-FROM ubuntu:18.04.5
+FROM ubuntu:18.04
 
 LABEL maintainer="Alexis Ahmed/sameh"
 
