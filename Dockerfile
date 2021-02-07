@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 LABEL maintainer="Alexis Ahmed/sameh"
 
@@ -123,4 +123,4 @@ RUN cd /root && git clone https://github.com/BountyStrike/Injectus && cd /root/I
 RUN cd /root/BugBountyScanner && git clone https://github.com/abdallah-elsharif/cve-2019-3396 && cd cve-2019-3396 && gem install bundler && bundle install && chmod +x cve-2019-3396.rb
 RUN pip3 install uddup
 RUN pip3 install telegram-send
-RUN pip3 install -r /root/Injectus/requirements.txt --user
+#RUN pip3 install -r /root/Injectus/requirements.txt --user
