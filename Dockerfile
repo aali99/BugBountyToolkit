@@ -122,3 +122,5 @@ RUN pip3 install webscreenshot
 RUN cd /root && git clone https://github.com/BountyStrike/Injectus && cd /root/Injectus && chmod +x * 
 RUN cd /root/BugBountyScanner && git clone https://github.com/abdallah-elsharif/cve-2019-3396 && cd cve-2019-3396 && gem install bundler && bundle install && chmod +x cve-2019-3396.rb
 RUN pip3 install uddup
+RUN pip3 install telegram-send
+RUN pip3 install -r /root/Injectus/requirements.txt --user
