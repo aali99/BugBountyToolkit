@@ -131,3 +131,6 @@ RUN tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /usr/local/share/
 RUN ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/
 RUN cd /root && git clone https://github.com/andreafabrizi/Dropbox-Uploader.git && cd ~/Dropbox-Uploader &&chmod +x dropbox_uploader.sh
 RUN git clone https://github.com/aali99/JSFScan.sh && cd JSFScan.sh && chmod +x * && bash install.sh && cp JSFScan.sh /usr/local/bin/
+RUN go get -u github.com/ryandamour/ssrfuzz
+RUN git clone https://github.com/nsonaniya2010/SubDomainizer.git && cd SubDomainizer && pip3 install -r requirements.txt && chmod +x SubDomainizer.py && cp SubDomainizer.py /usr/local/bin/
+RUN git clone https://github.com/obheda12/GitDorker && cd GitDorker && chmod +x GitDorker.py && cp GitDorker.py /usr/local/bin
