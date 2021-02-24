@@ -134,3 +134,4 @@ RUN git clone https://github.com/aali99/JSFScan.sh && cd JSFScan.sh && chmod +x 
 RUN go get -u github.com/ryandamour/ssrfuzz
 RUN git clone https://github.com/nsonaniya2010/SubDomainizer.git && cd SubDomainizer && pip3 install -r requirements.txt && chmod +x SubDomainizer.py && cp SubDomainizer.py /usr/local/bin/
 RUN git clone https://github.com/obheda12/GitDorker && cd GitDorker && chmod +x GitDorker.py && cp GitDorker.py /usr/local/bin
+RUN git clone https://github.com/ProjectAnte/dnsgen && cd dnsgen && chmod +x * && pip3 install -r requirements.txt && python3 setup.py install
